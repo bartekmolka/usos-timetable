@@ -1,0 +1,113 @@
+#usos-filter-panel {
+  position: fixed;
+  top: 90px;
+  right: 16px;
+  width: 270px;
+  max-height: 75vh;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #222;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#usos-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #1d3557;
+  color: #fff;
+  font-weight: bold;
+}
+
+#usos-filter-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#usos-filter-body {
+  overflow-y: auto;
+  padding: 8px 10px;
+  flex: 1 1 auto;
+}
+
+#usos-filter-panel.usos-filter-collapsed #usos-filter-body,
+#usos-filter-panel.usos-filter-collapsed #usos-filter-footer {
+  display: none;
+}
+
+.usos-filter-course {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+.usos-filter-course:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.usos-filter-course-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.usos-filter-type-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0;
+  gap: 6px;
+}
+
+.usos-filter-type-label {
+  font-weight: bold;
+  color: #457b9d;
+  min-width: 36px;
+}
+
+.usos-filter-type-line select {
+  flex: 1;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.usos-filter-empty {
+  color: #666;
+  font-style: italic;
+}
+
+#usos-filter-footer {
+  padding: 8px 10px;
+  border-top: 1px solid #eee;
+}
+
+#usos-filter-footer button {
+  width: 100%;
+  padding: 6px;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+#usos-filter-footer button:hover {
+  background: #d62839;
+}
+
+timetable-entry.usos-filter-hidden {
+  display: none !important;
+}

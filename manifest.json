@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "USOS – Filtr grup zajęciowych",
+  "version": "1.0.0",
+  "description": "Ukrywa niewybrane grupy w planie zajęć USOS. Wykłady zawsze widoczne, dla pozostałych zajęć (ćwiczenia, laboratoria, projekty) wybierasz jedną grupę na przedmiot.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.usos.agh.edu.pl/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
