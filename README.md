@@ -5,13 +5,16 @@ Rozszerzenie do przeglądarki, które ułatwia czytanie planu zajęć w USOS (wi
 CWP itd.), a w panelu w prawym górnym rogu strony pozwala wybrać, którą grupę
 chcesz widzieć na każdym przedmiocie.
 
-- **Wykłady (W) są zawsze widoczne** – nigdy nie są filtrowane.
-- Dla każdego innego typu zajęć (ćwiczenia laboratoryjne CWL, audytoryjne CWA,
-  projektowe CWP itd.) wybierasz **jedną grupę na przedmiot** – pozostałe
-  grupy znikają z planu.
-- Wybory zapisują się automatycznie (`chrome.storage.local`) i zostają po
-  odświeżeniu strony.
-- Przycisk „Wyczyść filtry” w panelu przywraca widok wszystkich grup.
+- **Elastyczne filtrowanie grup** – dla każdego typu zajęć (ćwiczenia laboratoryjne CWL, audytoryjne CWA, projektowe CWP itd.) możesz wybrać:
+  - konkretną grupę (np. *Gr. 1*),
+  - *Wszystkie* – pozostawia widoczne wszystkie grupy danego typu,
+  - *Ukryj wszystkie* – ukrywa dany typ zajęć dla przedmiotu.
+- **Kontrola widoczności wykładów (W)**:
+  - Domyślnie wykłady są widoczne.
+  - Globalny przełącznik w stopce **„Ukryj wszystkie W”** pozwala jednym kliknięciem schować wszystkie wykłady.
+  - Przycisk **„Opcje W”** rozwija w wierszach przedmiotów opcję *Pokaż / Ukryj* dedykowaną dla wykładu danego przedmiotu.
+- Wybory zapisują się automatycznie (`chrome.storage.local`) i zostają po odświeżeniu strony.
+- Przycisk **„Wyczyść filtry (pokaż wszystko)”** w panelu przywraca domyślny widok wszystkich zajęć i wykładów.
 - Panel można zwinąć przyciskiem „–” w nagłówku.
 
 ## Instalacja w Brave
@@ -49,10 +52,10 @@ Po zmianie manifestu kliknij ikonę odświeżania przy rozszerzeniu na stronie
 Skrypt `content.js` szuka na stronie elementów `<timetable-entry>`, czyta z
 nich atrybut `name-id` (identyfikator przedmiotu) oraz tekst w `slot="info"`
 (np. „CWL, gr. 7 (316, bud. C2)”), z którego wyciąga typ zajęć i numer grupy.
-Na tej podstawie buduje listę przedmiotów z dostępnymi grupami i renderuje
-panel wyboru. Wpisy nienależące do wybranej grupy są ukrywane przez dodanie
-klasy CSS `usos-filter-hidden` (z `display: none !important`), bez ingerencji
-w resztę strony.
+Na tej podstawie buduje listę przedmiotów z dostępnymi grupami oraz wykładami i renderuje
+panel wyboru. Wpisy nienależące do wybranej grupy, ukryte typy zajęć lub wyłączone wykłady
+są ukrywane przez dodanie klasy CSS `usos-filter-hidden` (z `display: none !important`),
+bez ingerencji w resztę strony.
 
 ## Uwaga
 
