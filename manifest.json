@@ -6,10 +6,16 @@
   "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": ["https://web.usos.agh.edu.pl/*"],
+      "matches": ["https://web.usos.agh.edu.pl/*", "https://usosweb.uj.edu.pl/*"],
       "js": ["content.js"],
       "css": ["style.css"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "browser_specific_settings":{
+    "gecko":{
+        "id":"usos-filtr@agh.edu.pl",
+        "strict_min_version":"109.0"
+    }
+  }
 }
